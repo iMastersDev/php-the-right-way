@@ -1,21 +1,21 @@
 ---
 layout: page
-title: Design Patterns
+title: Padrões de Design
 ---
 
-# Design Patterns
+# Padrões de Design
 
-There are numerous ways to structure the code and project for you web application, and you can put as much or as little
-thought as you like into architecting. But it is usually a good idea to follow to common patterns because it will make
-your code easier to manage and easier for others to understand.
+Existem inúmeras formas de estruturar o código e o projeto de sua aplicação web, e você pode colocar tanto quanto
+quiser em sua arquitetura. Mas, normalmente, é uma boa ideia seguir alguns padrões de design comuns, porque isso
+fará com que seu código fique mais fácil para manter e também para que outros entendam.
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [Padrões de arquitetura na Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [Padrões de design de software na Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 ## Factory
 
-One of the most commonly used design patterns is the factory pattern. In this pattern, a class simply creates
-the object you want to use. Consider the following example of the factory pattern:
+Um dos padrões de design mais comumente utilizados é o padrão Factory, ou fábrica. Nesse padrão, uma classe apenas
+cria uma instância do objeto que você deseja utilizar. Considere o seguinte exemplo do padrão Factory:
 
 {% highlight php %}
 <?php
@@ -50,38 +50,41 @@ $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 print_r($veyron->get_make_and_model()); // outputs "Bugatti Veyron"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way, the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile
-class. The second possible benefit is that if creating the object is a complicated job you can do all of the work in
-the factory, instead of repeating it every time you want to create a new instance.
+Esse código utiliza uma fábrica para criar o objeto Automobile. Existem dois benefícios ao escrever seu código dessa
+forma, o primeiro é que se você precisar modificar, renomear ou substituir a classe Automobile, você pode fazê-lo
+e precisará apenas modificar apenas a fábrica, em vez de ter que modificar diversos pontos no seu código que utilizam
+a classe Automobile. O segundo benefício é que, se a criação do objeto for algo complexo, você pode deixar toda essa
+complexidade dentro da fábrica em vez de ter que ficar repetindo essa tarefa diversas vezes, sempre que precisar de
+uma nova instância daquele objeto.
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+Utilizar o padrão factory nem sempre é algo necessário (ou inteligente). O exemplo utilizado aqui é tão simples que
+a fábrica apenas adicionaria uma complexidade desnecessária. Contudo, se você estiver trabalhando em um projeto muito
+grande ou complexo você poderá evitar problemas se estiver utilizando fábricas.
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+* [Padrão Factory na Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
 
 ## Front Controller
 
-The front controller pattern is where you have a single entrance point for you web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+O padrão front controller é quando você tem apenas um ponto de entrada para sua aplicação (ex: index.php) que faz
+a manipulação de todas as requisições. Este código é responsável por carregar todas as dependências, processar a
+requisição e enviar respostas para o navegador. O padrão front controller pode ser benéfico porque encoraja a 
+escrever código modular e lhe dá um ponto central para lidar com o código que deverá ser executado para cada 
+requisição (como sanitização das entradas do usuário).
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [Padrão Front Controller na Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
 ## Model-View-Controller
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM let you break up code into logical objects that
-serve very specific purposes. Models serve as a data access layer where data it fetched and returned in formats usable
-throughout your application. Controllers handle the request, process the data returned from models and load views to
-send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the web
-browser.
+O padrão model-view-controller (MVC) e suas derivações HMVC e MVVM permitem que você divida seu código em objetos 
+lógicos que servem para propósitos específicos. As models servem como uma camada de acesso onde dados são obtidos
+e retornados em formatos utilizáveis pela sua aplicação. Controllers manipulam requisições, processam os dados
+retornados pelas models e carregam as Views para serem enviadas na resposta. E as Views são templates para exibição
+(marcação, xml, etc) que serão enviadas na resposta para o navegador.  
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC é o padrão arquitetural mais comumente utilizado nos [frameworks PHP](https://github.com/codeguy/php-the-right-way/wiki/Frameworks) 
+mais populares.
 
-Learn more about MVC and its relatives:
+Aprenda mais sobre MVC e suas derivações:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)
