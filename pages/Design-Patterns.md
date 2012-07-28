@@ -1,21 +1,20 @@
 ---
 layout: page
-title: Design Patterns
+title: Padrões de Projeto 
 ---
 
-# Design Patterns
+# Padrões de Projeto 
 
-There are numerous ways to structure the code and project for you web application, and you can put as much or as little
-thought as you like into architecting. But it is usually a good idea to follow to common patterns because it will make
-your code easier to manage and easier for others to understand.
+Existem várias maneiras de organizar código e projeto para suas aplicações web, e você pode subutiliza-las ou utiliza-las exagerar no uso.
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+Pense em você como um arquiteto. Normalmente é uma boa idéia seguir os padrões por que isso facilita a manutenção do código e o torna mais facil de entender para os outros.
+ 
+* [Padrões de Arquitetura na Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [Design de Software na Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 ## Factory
 
-One of the most commonly used design patterns is the factory pattern. In this pattern, a class simply creates
-the object you want to use. Consider the following example of the factory pattern:
+Um dos design patterns mais utilizados é o Factory. Nesse padrão uma classe simplesmente cria os objetos que você necessita. Considere o exemplo a seguir de implementação do Design Pattern Factory.
 
 {% highlight php %}
 <?php
@@ -44,23 +43,20 @@ class AutomobileFactory
     }
 }
 
-// have the factory create the Automobile object
+// A Factory criou o Objeto Automobile
 $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 
-print_r($veyron->get_make_and_model()); // outputs "Bugatti Veyron"
+print_r($veyron->get_make_and_model()); // mostrou "Bugatti Veyron"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way, the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile
-class. The second possible benefit is that if creating the object is a complicated job you can do all of the work in
-the factory, instead of repeating it every time you want to create a new instance.
+O código acima utiliza uma facotry para criar instancias do objeto Automobile e existem dois possiveis benefícios em se programar assim.
+O primeiro é que em caso de mudança, mudança de nome ou substituição da classe Automobile você só tem que alterar o código da factory, ao invés do trabalho de alterar em cada lugar de seu programa em que usava diretamente a classe Automobile.
+O segundo benefício possível é que se criar o objeto não for uma operação simples, a factory pode fazer todo o trabalho para você, ao invés de ficar repetindo toda a complexidade toda vez que precisar de uma instância no código. 
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+Utilizar o padrão factory nem sempre é necessário (ou a melhor escolha) O código utilizado como exemplo é tão simples que, nesse caso, utilizar uma factory pode ser considerado adicionar complexidade uma desnecessária, entretanto, se você estiver trabalhando em um projeto de complexidade maior, utilizar a factory pode lhe poupar muito trabalho.
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+
+* [Padrão Factory na Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
 
 ## Front Controller
 
