@@ -60,24 +60,22 @@ Utilizar o padrão factory nem sempre é necessário (ou a melhor escolha) O có
 
 ## Front Controller
 
-The front controller pattern is where you have a single entrance point for you web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+O padrão Front Controller implementa um único ponto de entrada para todo o trabalho na sua aplicação(ex index.php) onde selida com todas as requisições.
+Tem a responsabilidade de carregar todas as dependências necessárias para o processamento de uma requisição e devolver uma resposta para o cliente(browser).
+O Front Controller pode ser benéfico por encorajar código modulas e fornecer um único ponto onde se pode adicionar código a ser utilizado em todas requisição(como limpeza de dados enviados ao servidor).
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [Padrão de Projeto Front Controller na Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
 ## Model-View-Controller
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM let you break up code into logical objects that
-serve very specific purposes. Models serve as a data access layer where data it fetched and returned in formats usable
-throughout your application. Controllers handle the request, process the data returned from models and load views to
-send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the web
-browser.
+O padrão mode-view-controller (MVC) e os padrões relacionados HMVC e MVVM permitem basear o código em objetos lógicos com propósitos bem específicos.
+Models são utilizados como camada de acesso a dados. Onde se buscam dados entregues em um formato mais propício para a aplicação.
+Controllers lidam com as requisição, processam os dados entregues pelos models e carregam as views para enviar uma resposta formatada ao cliente.
+Views são templates (markup, xml e etc) que são preenchidos com dados e entregues para o cliente(browser).
+ 
+MVC é o mais popular entre os padrõeas de projeto arquiteturais. [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
-
-Learn more about MVC and its relatives:
+Aprenda mais sobre MVC e outros padrões semelhantes ems:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)
