@@ -30,7 +30,7 @@ disponibilizados.
 
 Ajude a fazer deste website o melhor recurso para os novos programadores! [Contribua no GitHub][1]
 
-## Espalhe!
+## Espalhe a ideia!
 
 _PHP: Da Forma Correta_ tem alguns banners que você pode utilizar no seu site. Mostre seu suporte e deixe que os
 novos desenvolvedores PHP saibam onde encontrar boa informação!
