@@ -12,7 +12,7 @@ _PHP: Da Forma Correta_ é (ou será em breve) traduzido em várias linguagem di
 * [Inglês](http://www.phptherightway.com)
 * [Chinês](http://wulijun.github.com/php-the-right-way)
 * [Japonês](http://ja.phptherightway.com)
-* Português (http://imastersdev.github.com/php-the-right-way)
+* Português(http://imastersdev.github.com/php-the-right-way)
 * Russo (Em breve)
 * [Espanhol](http://es.phptherightway.com)
 * Ucraniano (Em breve)
