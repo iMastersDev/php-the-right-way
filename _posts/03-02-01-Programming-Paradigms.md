@@ -2,21 +2,24 @@
 isChild: true
 ---
 
-## Programming Paradigms
+## Paradigmas de Programação 
 
-PHP is a flexible, dynamic language that supports a variety of programming techniques. It has evolved dramatically over
-the years, notably adding a solid object-oriented model in PHP 5.0 (2004), anonymous functions and namespaces in PHP 5.3 
-(2009), and traits in PHP 5.4 (2012). 
+PHP é uma linguagem flexivel e dinamica que suporta uma variedade de técnicas de programação.
+Ela tem evoluido muito ao longo dos anos, com destaque para a adição de um sólido suporte ao paradigma de
+programação orientada a objetos no PHP 5.0 (2004), funções anônimas e namespaces no PHP 5.3 e traits no PHP 5.4
+(2012).
 
-### Object-oriented Programming
 
-PHP has a very complete set of object-oriented programming features including support for classes, abstract classes,
-interfaces, inheritence, constructors, cloning, exceptions, and more.
+### Programação orientada a objetos 
 
-* [Read about Object-oriented PHP][oop]
-* [Read about Traits][traits]
+PHP tem um suporte bem completo ao conjunto de necessidades da programação orientada a objetos, incluindo suporte a
+classes, classes abstratas, interfaces, herança, construtores, clonagem, exceções e muito mais.
 
-### Functional Programming
+* [Leia sobre programação orientada a objetos][oop]
+* [Leia sobre Traits][traits]
+
+### Programação Funcional
+
 
 PHP supports first-class function, meaning that a function can be assigned to a variable. Both user defined and built-in 
 functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to other
