@@ -2,33 +2,24 @@
 title: Databases
 ---
 
-# Databases
+# Bancos de dados
 
-Many times your PHP code will use a database to persist information. You have a few options to connect and interact
-with your database. The recommended option _until PHP 5.1.0_ was to use native drivers such as [mysql][mysql], [mysqli][mysqli], [pgsql][pgsql], etc.
+Muitas vezes seu código PHP usará um banco de dados para dar persistência à informação. Você tem alguma opções para conectar e interagir com seu banco de dados. A opção recomendada _até o PHP PHP 5.1.0_ era usar drivers nativos como [mysql][mysql], [mysqli][mysqli], [pgsql][pgsql], etc.
 
-Native drivers are great if you are only using ONE database in your application, but if, for example, you are using MySQL and a little bit of MSSQL,
-or you need to connect to an Oracle database, then you will not be able to use the same drivers. You'll need to learn a brand new API for each
-database &mdash; and that can get silly.
+Drivers nativos são ótimos se você está usando apenas UM banco de dados em sua aplicação, mas se, por exemplo, você está usando MySQL e um pouco de MSSQL, ou precisa se conectar a um banco de dados Oracle, então você não será capaz de usar os mesmos drivers. Você precisará aprender uma API totalmente nova para cada banco de dados &mdash; e isso pode se tornar chato.
 
-As an extra note on native drivers, the mysql extension for PHP is no longer in active development, and the official status since PHP 5.4.0 is
-"Long term deprecation". This means it will be removed within the next few releases, so by PHP 5.6 (or whatever comes after 5.5) it may well be gone. If you are using `mysql_connect()` and `mysql_query()` in your applications then you will be faced with a rewrite at some point down the
-line, so the best option is to replace mysql usage with mysqli or PDO in your applications within your own development shedules so you won't
-be rushed later on. _If you are starting from scratch then absolutely do not use the mysql extension: use the [MySQLi extension][mysqli], or use PDO._
+Como uma nota extra sobre os drivers nativos, a extensão mysql para o PHP não está mais em desenvolvimento e o status oficial desde o PHP 5.4.0 é "Long term deprecation". Isso significa que ela será removida dentro de alguns próximos release, então no PHP 5.6 (ou qualquer um depois do 5.5) ela deverá estar fora. Se você está usando `mysql_connect()` e `mysql_query()` em suas aplicações, então você irá deparar em algum momento com a necessidade de reescrita, logo a melhor opção é substituir o uso de de mysql por mysqli ou PDO em suas aplicações ou dentro de seu próprio esquema de desenvolvimento para evitar reescrever às pressas mais tarde. _Se você está começando do zero então definitivamente não use a extensão mysql: use a [extensão MySQLi][mysqli], ou use PDO._
 
-* [PHP: Choosing an API for MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
+* [PHP: Escolhendo uma API para MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
 
 ## PDO
 
-PDO is a database connection abstraction library &mdash;  built into PHP since 5.1.0 &mdash; that provides a common interface to talk with
-many different databases. PDO will not translate your SQL queries or emulate missing features; it is purely for connecting to multiple types
-of database with the same API.
+PDO é uma biblioteca de abstração a conexão com banco de dados &mdash;  presente no PHP desde 5.1.0 &mdash; ela fornce uma interface comum para se comunicar com vários bancos de dados diferentes. PDO não traduzirá suas consultas SQL nem simulará funções que estejam faltando; é puramente para se conectar a múltiplos tipos de bancos de dados com a mesma API.
 
-More importantly, `PDO` allows you to safely inject foreign input (e.g. IDs) into your SQL queries without worrying about database SQL injection attacks.
-This is possible using PDO statements and bound parameters.
+Mais importante ainda, `PDO` lhe permite usar entradas desconhecidas(IDs, por exemplo) em suas consultas SQL sem precisar se preocupar com ataques de SQL inject.
+Isso é possível usando declarações PDO e parâmetros associados.
 
-Let's assume a PHP script receives a numeric ID as a query parameter. This ID should be used to fetch a user record from a database. This is the `wrong`
-way to do this:
+Vamos pensar num script PHP que recebe uma ID numérica como o parâmetro de uma consulta. Esta ID deve ser usada para pegar o registro de um usuário no banco de dados. Esta é a maneira errada de fazê-lo:
 
 {% highlight php %}
 <?php
@@ -36,23 +27,21 @@ $pdo = new PDO('sqlite:users.db');
 $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NO!
 {% endhighlight %}
 
-This is terrible code. You are inserting a raw query parameter into a SQL query. This will get you hacked in a heartbeat. Instead,
-you should sanitize the ID input using PDO bound parameters.
+Este código é horrível. Você está inserindo um parâmetro desprotegido dentro de uma consulta SQL. Isso vai fazer você ser _hackeado_ num piscar de olhos. Em vez disso, você deve limpar a entrada ID usando parâmetros associados do PDO.
 
 {% highlight php %}
 <?php
 $pdo = new PDO('sqlite:users.db');
 $stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
-$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); //<-- Automatically sanitized by PDO
+$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); //<-- Automaticamente limpa pelo PDO
 $stmt->execute();
 {% endhighlight %}
 
-This is correct code. It uses a bound parameter on a PDO statement. This escapes the foreign input ID before it is introduced to the
-database preventing potential SQL injection attacks.
+Este código é correto. Ele usa um parâmetro associado em uma declaração PDO. Isto _escapa_ a entrada desconhecida de ID antes que ela seja introduzida ao banco de dados, prevenindo potenciais ataques de SQL inject.
 
-* [Learn about PDO][1]
+* [Aprenda sobre PDO][1]
 
-## Abstraction Layers
+## Camadas de abstração
 
 Many frameworks provide their own abstraction layer which may or may not sit on top of PDO.  These will often emulate features for
 one database system that another is missing form another by wrapping your queries in PHP methods, giving you actual database abstraction.
