@@ -1,13 +1,13 @@
-# PHP: The Right Way
+# PHP: Do jeito Certo
 
-## Overview
+## Visão Geral
 
-This is the GitHub Pages repository for the _PHP: The Right Way_ project.
+Esta é a pagina no github do repositório do projeto _PHP: Do Jeito Certo_.
 
-* This website is a Jekyll project.
-* Each section and sub-section are a Markdown file in `_posts/`.
-* Sub-sections have `isChild: true` in their front matter.
-* The navigation and page structure are automatically generated.
+* Este site é um pojeto Jekyll
+* Cada seção e sub-seção são arquivos Markdown em `_posts/`.
+* Sub-seções têm `isChild: true` no início.
+* A navegação e estutura da página são geradas automaticamente.
 
 ## Spread the Word!
 
