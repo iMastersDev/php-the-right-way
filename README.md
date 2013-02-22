@@ -9,10 +9,10 @@ Esta é a pagina no github do repositório do projeto _PHP: Do Jeito Certo_.
 * Sub-seções têm `isChild: true` no início.
 * A navegação e estutura da página são geradas automaticamente.
 
-## Spread the Word!
+## Espalhe a palavra!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP
-developers know where to find good information!
+_PHP: Do Jeito Certo_ tem banners de iamgens que você pode usar no seu site. Mostre o seu apoio, e ajude novos desenvolvedores PHP
+a saber onde encontrar informaão d qualidade!
 
 [See Banner Images](http://www.phptherightway.com/banners.html)
 
