@@ -14,13 +14,13 @@ Esta é a pagina no github do repositório do projeto _PHP: Do Jeito Certo_.
 _PHP: Do Jeito Certo_ tem banners de iamgens que você pode usar no seu site. Mostre o seu apoio, e ajude novos desenvolvedores PHP
 a saber onde encontrar informaão d qualidade!
 
-[See Banner Images](http://www.phptherightway.com/banners.html)
+[Veja os Banners](http://www.phptherightway.com/banners.html)
 
-## How to Contribute
+## Como contribuir
 
-1. Fork and edit
-2. Optionally install [Ruby](https://rvm.io/rvm/install/) with [Jekyll](https://github.com/mojombo/jekyll/) gem to preview locally
-3. Submit pull request for consideration
+1. Fork e edite
+2. Instalação opcional [Ruby](https://rvm.io/rvm/install/) com a gem [Jekyll](https://github.com/mojombo/jekyll/) para visualizar localmente
+3. Enviar pull request por gentileza
 
 ### Contributor Style Guide
 
