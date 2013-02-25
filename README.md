@@ -1,5 +1,6 @@
 # PHP: Do jeito Certo
 
+
 ## Visão Geral
 
 Esta é a pagina no github do repositório do projeto _PHP: Do Jeito Certo_.
