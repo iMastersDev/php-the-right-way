@@ -1,26 +1,27 @@
-# PHP: The Right Way
+# PHP: Do jeito Certo
 
-## Overview
 
-This is the GitHub Pages repository for the _PHP: The Right Way_ project.
+## Visão Geral
 
-* This website is a Jekyll project.
-* Each section and sub-section are a Markdown file in `_posts/`.
-* Sub-sections have `isChild: true` in their front matter.
-* The navigation and page structure are automatically generated.
+Esta é a pagina no github do repositório do projeto _PHP: Do Jeito Certo_.
 
-## Spread the Word!
+* Este site é um pojeto Jekyll
+* Cada seção e sub-seção são arquivos Markdown em `_posts/`.
+* Sub-seções têm `isChild: true` no início.
+* A navegação e estutura da página são geradas automaticamente.
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP
-developers know where to find good information!
+## Espalhe a palavra!
 
-[See Banner Images](http://www.phptherightway.com/banners.html)
+_PHP: Do Jeito Certo_ tem banners de iamgens que você pode usar no seu site. Mostre o seu apoio, e ajude novos desenvolvedores PHP
+a saber onde encontrar informaão d qualidade!
 
-## How to Contribute
+[Veja os Banners](http://www.phptherightway.com/banners.html)
 
-1. Fork and edit
-2. Optionally install [Ruby](https://rvm.io/rvm/install/) with [Jekyll](https://github.com/mojombo/jekyll/) gem to preview locally
-3. Submit pull request for consideration
+## Como contribuir
+
+1. Fork e edite
+2. Instalação opcional [Ruby](https://rvm.io/rvm/install/) com a gem [Jekyll](https://github.com/mojombo/jekyll/) para visualizar localmente
+3. Enviar pull request por gentileza
 
 ### Contributor Style Guide
 
